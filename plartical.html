@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plartical</title>
+
+    <style>
+        form {
+            display: inline-block;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <input type="text" id="inputText" placeholder="Enter Text">
+    <input type="color" id="color">
+    <input type="range" min="10" max="100" id="fontSize">
+
+    <select name="" id="fontStyle">
+        <option value="Time New Roman">time</option>
+        <option value="Arial">arial</option>
+    </select>
+
+    <button class="submit">
+        submit
+    </button>
+
+    <p class="result">
+        Hello World!
+    </p>
+
+    <script>
+
+        let inputText = document.querySelector("#inputText");
+        let color = document.querySelector("#color");
+        let fontSize = document.querySelector("#fontSize");
+        let fontStyle = document.querySelector("#fontStyle");
+
+        let result = document.querySelector(".result");
+        let submit = document.querySelector(".submit");
+        
+        inputText.addEventListener("keyup",function(e){
+            result.innerText = e.target.value;
+        }); 
+
+        color.addEventListener("change",function(){
+            result.style.color = this.value;
+        });
+
+        fontSize.addEventListener("change",function(){
+            result.style.fontSize = this.value+"px";
+        });
+
+        fontStyle.addEventListener("change",function(){
+            result.style.fontFamily = "Arial";
+        });
+
+    </script>
+
+</body>
+
+</html>
